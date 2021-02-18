@@ -60,11 +60,14 @@
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
 	<script src="https://apis.google.com/js/api.js" type="text/javascript"></script>
+	<script src=”https://code.jquery.com/jquery-3.4.1.js" integrity=”sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=” crossorigin=”anonymous”>
+	</script>
 	<script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
-	<script>
+	<!-- <script>
 		function SubForm (){
 			$.ajax({
-				url:'https://api.apispreadsheets.com/data/410/',
+				url:'https://api.apispreadsheets.com/data/8363/',
+				// headers: {"accessKey": "YOUR_ACCESS_KEY", "secretKey": "YOUR_ACCESS_KEY"},
 				type:'post',
 				data:$("#myForm").serializeArray(),
 				success: function(){
@@ -75,7 +78,7 @@
 				}
 			});
 		}
-		</script>
+		</script> -->
 	<!-- FOR IE9 below -->
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
@@ -123,7 +126,7 @@
 		</div>
 	</nav>
 
-	<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(images/img_bg_2.jpg);" data-stellar-background-ratio="0.5">
+	<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(images/bg-1.jpg);" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
@@ -153,7 +156,7 @@
 			<div class="couple-wrap animate-box">
 				<div class="couple-half">
 					<div class="groom">
-						<img src="images/groom.jpg" alt="groom" class="img-responsive">
+						<img src="images/afif.jpeg" alt="groom" class="img-responsive">
 					</div>
 					<div class="desc-groom">
 						<h3>Afif Rizki Kurniawan S.Kom</h3>
@@ -163,7 +166,7 @@
 				<p class="heart text-center"><i class="icon-heart2"></i></p>
 				<div class="couple-half">
 					<div class="bride">
-						<img src="images/bride.jpg" alt="groom" class="img-responsive">
+						<img src="images/anggun.jpeg" alt="groom" class="img-responsive">
 					</div>
 					<div class="desc-bride">
 						<h3>Anggun Vika Aryani</h3>
@@ -174,7 +177,7 @@
 		</div>
 	</div>
 
-	<div id="fh5co-event" class="fh5co-bg" style="background-image:url(images/img_bg_3.jpg);">
+	<div id="fh5co-event" class="fh5co-bg" style="background-image:url(images/bg-2.jpg);">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
@@ -429,60 +432,6 @@
 		</div>
 	</div> -->
 
-	<div id="fh5co-testimonial">
-		<div class="container">
-			<div class="row">
-				<div class="row animate-box">
-					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-						<span>Best Wishes</span>
-						<h2>Friends Wishes</h2>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-12 animate-box">
-						<div class="wrap-testimony">
-							<div class="owl-carousel-fullwidth">
-								<div class="item">
-									<div class="testimony-slide active text-center">
-										<figure>
-											<img src="images/couple-1.jpg" alt="user">
-										</figure>
-										<span>John Doe, via <a href="#" class="twitter">Twitter</a></span>
-										<blockquote>
-											<p>"Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics"</p>
-										</blockquote>
-									</div>
-								</div>
-								<div class="item">
-									<div class="testimony-slide active text-center">
-										<figure>
-											<img src="images/couple-2.jpg" alt="user">
-										</figure>
-										<span>John Doe, via <a href="#" class="twitter">Twitter</a></span>
-										<blockquote>
-											<p>"Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, at the coast of the Semantics, a large language ocean."</p>
-										</blockquote>
-									</div>
-								</div>
-								<div class="item">
-									<div class="testimony-slide active text-center">
-										<figure>
-											<img src="images/couple-3.jpg" alt="user">
-										</figure>
-										<span>John Doe, via <a href="#" class="twitter">Twitter</a></span>
-										<blockquote>
-											<p>"Far far away, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean."</p>
-										</blockquote>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
 	<div id="fh5co-services" class="fh5co-section-gray">
 		<div class="container">
 			
@@ -520,14 +469,13 @@
 		</div>
 	</div>
 
-
 	<div id="fh5co-started" class="fh5co-bg" style="background-image:url(images/img_bg_4.jpg);">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row animate-box">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-					<h2>Are You Attending?</h2>
-					<p>Please Fill-up the form to notify you that you're attending. Thanks.</p>
+					<h2>Do you want to Say something?</h2>
+					<p>Please Fill in the form to say something to us. Thank you.</p>
 				</div>
 			</div>
 			<div class="row animate-box">
@@ -536,25 +484,75 @@
 						<div class="col-md-4 col-sm-4">
 							<div class="form-group">
 								<label for="name" class="sr-only">Name</label>
-								<input type="name" class="form-control" id="name" placeholder="Name" name="full_name">
+								<input type="name" class="form-control" id="full_name" placeholder="Name" name="full_name">
 							</div>
 						</div>
-						<div class="col-md-4 col-sm-4">
+						<div class="col-md-8 col-sm-8">
 							<div class="form-group">
-								<label for="email" class="sr-only">Email</label>
-								<input type="email" class="form-control" id="email" placeholder="Email" name="email">
+								<label for="message" class="sr-only">Testimoni</label>
+								<!-- <input type="email" class="form-control" id="email" placeholder="Email"> -->
+								<textarea name="message" class="form-control" id="message_testimoni" placeholder="message"></textarea>
 							</div>
 						</div>
-						<div class="col-md-4 col-sm-4">
-							<div class="form-group">
-								<label for="testimoni" class="sr-only">Testimoni</label>
-								<textarea class="form-control" id="testimoni" placeholder="testimoni" name="testimoni">
-							</div>
-						</div>
-						<div class="col-md-4 col-sm-4">
-							<button type="submit" class="btn btn-default btn-block">I am Attending</button>
+						<div class="col-md-12 col-sm-12">
+							<button type="submit" class="btn btn-default btn-block btn-testimoni">Say Something</button>
 						</div>
 					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="fh5co-testimonial">
+		<div class="container">
+			<div class="row">
+				<div class="row animate-box">
+					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+						<span>Best Wishes</span>
+						<h2>Friends Wishes</h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 animate-box">
+						<div class="wrap-testimony">
+							<div id="testimoni" class="testimoni-card flex-container"></div>
+							<!-- <div class="owl-carousel-fullwidth" id="owl-testimoni">
+								<div class="item">
+									<div class="testimony-slide active text-center">
+										<figure>
+											<img src="images/couple-1.jpg" alt="user">
+										</figure>
+										<span>John Doe, via <a href="#" class="twitter">Twitter</a></span>
+										<blockquote>
+											<p>"Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics"</p>
+										</blockquote>
+									</div>
+								</div>
+								<div class="item">
+									<div class="testimony-slide active text-center">
+										<figure>
+											<img src="images/couple-2.jpg" alt="user">
+										</figure>
+										<span>John Doe, via <a href="#" class="twitter">Twitter</a></span>
+										<blockquote>
+											<p>"Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, at the coast of the Semantics, a large language ocean."</p>
+										</blockquote>
+									</div>
+								</div>
+								<div class="item">
+									<div class="testimony-slide active text-center">
+										<figure>
+											<img src="images/couple-3.jpg" alt="user">
+										</figure>
+										<span>John Doe, via <a href="#" class="twitter">Twitter</a></span>
+										<blockquote>
+											<p>"Far far away, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean."</p>
+										</blockquote>
+									</div>
+								</div>
+							</div> -->
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -566,8 +564,8 @@
 			<div class="row copyright">
 				<div class="col-md-12 text-center">
 					<p>
-						<small class="block">&copy; 2020 Created By Afif Rizki Kurniawan.</small> 
-						<small class="block">Designed by <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a> 
+						<small class="block bg-color-white">&copy; 2020 Created By Afif Rizki Kurniawan.</small> 
+						<small class="block bg-color-white">Designed by <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a> 
 					</p>
 					<p>
 						<ul class="fh5co-social-icons">

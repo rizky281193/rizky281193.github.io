@@ -1,6 +1,15 @@
 ;(function () {
 	
 	'use strict';
+	async function getUserAsync() {
+		try{
+		  let response = await fetch('https://api.apispreadsheets.com/data/8363/');
+		  return await response.json();
+		}catch(err){
+		  console.error(err);
+		  // Handle errors here
+		}
+	  }
 
 	var mobileMenuOutsideClick = function() {
 
@@ -17,7 +26,6 @@
 		});
 
 	};
-
 
 	var offcanvasMenu = function() {
 
@@ -140,10 +148,9 @@
 
 	};
 
-
 	var testimonialCarousel = function(){
 		var owl = $('.owl-carousel-fullwidth');
-		owl.owlCarousel({
+		  owl.owlCarousel({
 			items: 1,
 			loop: true,
 			margin: 0,
@@ -154,7 +161,7 @@
 			autoHeight: true,
 			autoplay:true,
 			autoplayTimeout:5000,
-			autoplayHoverPause:false
+			autoplayHoverPause:false,
 		});
 	};
 
@@ -216,52 +223,61 @@
 		$(window).stellar();
 	};
 
-	// var saveDate = function() {
-	// 	$('.save-date').on('click', function(e) {
-	// 		console.log('klik save date',d)
-	// 		// Refer to the JavaScript quickstart on how to setup the environment:
-	// 		// https://developers.google.com/calendar/quickstart/js
-	// 		// Change the scope to 'https://www.googleapis.com/auth/calendar' and delete any
-	// 		// stored credentials.
+	var saveTestimoni = function() {
+		$('.btn-testimoni').on('click', function(e) {
+			e.preventDefault()
+			console.log('klik save date')
+			const fullname = document.getElementById('full_name'),
+				msg = document.getElementById('message_testimoni');
+				console.log('fullname',fullname.value)
+				console.log('msg',msg.value)
+			fetch("https://api.apispreadsheets.com/data/8363/", {
+			method: "POST",
+			body: JSON.stringify({
+				"data": {
+					"full_name":fullname.value,
+					"message":msg.value
+				}
+			}),
+			}).then(res =>{
+				if (res.status === 201){
+					// SUCCESS
+					console.log('sukses')
+					window.location.reload();
+				}
+				else{
+					// ERROR
+					console.log('error')
+				}
+			})
+		})
+	}
 
-	// 		var event = {
-	// 			'summary': 'Google I/O 2015',
-	// 			'location': 'Dk. Gelam RT 018 RW 008 DS. Kedungwungu Kec. Todanan Kab. Blora Jawa Tengah 58256',
-	// 			'description': 'Wedding Afif Anggun',
-	// 			'start': {
-	// 				'dateTime': '2021-03-21T00:00:00.000+08:00',
-	// 				'timeZone': 'America/Los_Angeles'
-	// 			},
-	// 			'end': {
-	// 				'dateTime': '2020-03-21T00:00:00.000+08:00',
-	// 				'timeZone': 'America/Los_Angeles'
-	// 			},
-	// 			'recurrence': [
-	// 				'RRULE:FREQ=DAILY;COUNT=2'
-	// 			],
-	// 			// 'attendees': [
-	// 			// 	{'email': 'lpage@example.com'},
-	// 			// 	{'email': 'sbrin@example.com'}
-	// 			// ],
-	// 			'reminders': {
-	// 			'useDefault': false,
-	// 			'overrides': [
-	// 					{'method': 'email', 'minutes': 24 * 60},
-	// 					{'method': 'popup', 'minutes': 10}
-	// 				]
-	// 			}
-	// 		};
-			
-	// 		var request = gapi.client.calendar.events.insert({
-	// 			'calendarId': 'primary',
-	// 			'resource': event
-	// 		});
-			
-	// 		request.execute(function(event) {
-	// 			appendPre('Event created: ' + event.htmlLink);
-	// 		});
-	// 	})
-	// }
+	var readTestimoni = function() {
+		getUserAsync().then(el=> {
+			console.log('elements',el)
+			var content = "";
+			for(var i = 0; i < el["data"].length; i++){
+				var name = el["data"][i].full_name;
+				var messg = el["data"][i].message;
+				console.log('object',name)
+				// content += `<span>${name}</span>`;
+				content += '<div class="item">';
+					content += '<div class="testimony-slide active text-center">';
+						content += '<figure>';
+							content += '<img src="images/couple-1.jpg" alt="user">';
+						content += '</figure>';
+						content += `<span>${name}</span>`;
+						content += '<blockquote>';
+							content += `<p>${messg}</p>`;
+						content += '</blockquote>';
+					content += '</div>';
+				content += '</div>';
+			}
+			$("#testimoni").html(content);
+		})
+
+	}
 
 	
 	$(function(){
@@ -276,7 +292,9 @@
 		loaderPage();
 		counter();
 		counterWayPoint();
-		// saveDate();
+		saveTestimoni();
+		readTestimoni();
+		// getData();
 	});
 
 
