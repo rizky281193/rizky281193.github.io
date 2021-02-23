@@ -228,6 +228,8 @@
 			e.preventDefault()
 			const fullname = document.getElementById('full_name'),
 				msg = document.getElementById('message_testimoni');
+			var $this = $(this);
+			$this.button('loading');
 			fetch("https://api.apispreadsheets.com/data/8363/", {
 			method: "POST",
 			body: JSON.stringify({
@@ -239,7 +241,6 @@
 			}).then(res =>{
 				if (res.status === 201){
 					// SUCCESS
-					console.log('sukses')
 					window.location.reload();
 				}
 				else{
