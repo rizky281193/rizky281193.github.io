@@ -226,11 +226,8 @@
 	var saveTestimoni = function() {
 		$('.btn-testimoni').on('click', function(e) {
 			e.preventDefault()
-			console.log('klik save date')
 			const fullname = document.getElementById('full_name'),
 				msg = document.getElementById('message_testimoni');
-				console.log('fullname',fullname.value)
-				console.log('msg',msg.value)
 			fetch("https://api.apispreadsheets.com/data/8363/", {
 			method: "POST",
 			body: JSON.stringify({
@@ -255,7 +252,6 @@
 
 	var readTestimoni = function() {
 		getUserAsync().then(el=> {
-			console.log('elements',el)
 			var content = "";
 			for(var i = 0; i < el["data"].length; i++){
 				var name = el["data"][i].full_name;

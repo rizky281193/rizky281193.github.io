@@ -156,25 +156,25 @@
         targetTmpDate = new Date(
             parameters.year,
             parameters.month - 2,
-            parameters.day - 15,
+            parameters.day - 21,
             parameters.hours,
             parameters.minutes,
             parameters.seconds
         );
-        // console.log('targetTmpDate',targetTmpDate)
-        // console.log('day',parameters.day -15)
-        if (parameters.enableUtc) {
-            targetDate = new Date(
-                targetTmpDate.getUTCFullYear(),
-                targetTmpDate.getUTCMonth(),
-                targetTmpDate.getUTCDate(),
-                targetTmpDate.getUTCHours(),
-                targetTmpDate.getUTCMinutes(),
-                targetTmpDate.getUTCSeconds()
-            );
-        } else {
-            targetDate = targetTmpDate;
-        }
+        console.log('targetTmpDate',targetTmpDate)
+        // console.log('day',parameters.parameters.enableUtc)
+        // if (parameters.enableUtc) {
+        //     targetDate = new Date(
+        //         targetTmpDate.getUTCFullYear(),
+        //         targetTmpDate.getUTCMonth(),
+        //         targetTmpDate.getUTCDate(),
+        //         targetTmpDate.getUTCHours(),
+        //         targetTmpDate.getUTCMinutes(),
+        //         targetTmpDate.getUTCSeconds()
+        //     );
+        // } else {
+        // }
+        targetDate = targetTmpDate;
 
         Array.prototype.forEach.call(cd, function (countdown) {
             var fullCountDown = createElements(parameters, countdown),
