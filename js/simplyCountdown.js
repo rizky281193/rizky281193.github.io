@@ -152,15 +152,15 @@
             minutes,
             seconds,
             cd = document.querySelectorAll(elt);
-
-        targetTmpDate = new Date(
-            parameters.year,
-            parameters.month - 2,
-            parameters.day - 21,
-            parameters.hours,
-            parameters.minutes,
-            parameters.seconds
-        );
+        // targetTmpDate = new Date(
+        //     parameters.year,
+        //     parameters.month - 2,
+        //     parameters.day - 22,
+        //     parameters.hours,
+        //     parameters.minutes,
+        //     parameters.seconds
+        // );
+        targetTmpDate = new Date('2021', '02', '11', '0', '0', '0', '0');
         console.log('targetTmpDate',targetTmpDate)
         // console.log('day',parameters.parameters.enableUtc)
         // if (parameters.enableUtc) {
@@ -187,14 +187,13 @@
                     secondWord;
 
                 now = new Date();
-                if (parameters.enableUtc) {
-                    nowUtc = new Date(now.getFullYear(), now.getMonth(), now.getDate(),
-                        now.getHours(), now.getMinutes(), now.getSeconds());
-                    secondsLeft = (targetDate - nowUtc.getTime()) / 1000;
-
-                } else {
+                // if (parameters.enableUtc) {
+                //     nowUtc = new Date(now.getFullYear(), now.getMonth(), now.getDate(),
+                //         now.getHours(), now.getMinutes(), now.getSeconds());
+                //     secondsLeft = (targetDate - nowUtc.getTime()) / 1000;
+                // } else {
                     secondsLeft = (targetDate - now.getTime()) / 1000;
-                }
+                // }
 
                 if (secondsLeft > 0) {
                     days = parseInt(secondsLeft / 86400, 10);
