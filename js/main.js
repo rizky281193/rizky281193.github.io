@@ -257,7 +257,7 @@
 			for(var i = 0; i < el["data"].length; i++){
 				var name = el["data"][i].full_name;
 				var messg = el["data"][i].message;
-				console.log('object',name)
+				// console.log('object',name)
 				// content += `<span>${name}</span>`;
 				content += '<div class="item">';
 					content += '<div class="testimony-slide active text-center">';
